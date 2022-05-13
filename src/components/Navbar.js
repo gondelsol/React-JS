@@ -29,9 +29,12 @@ const Navbar = () => {
       </ul>
     </div>
   </div>
+  <div className="container-fluid">
+  <CartWidget />
+  </div>
 
 
-<CartWidget />
+
 </nav>
 
         </div>
