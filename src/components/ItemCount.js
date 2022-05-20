@@ -2,7 +2,7 @@ import { useState } from "react";
 
 const ItemCount = () => {
 
-        const [cantidad1, setCantidad1] = useState(1);
+        const [cantidad1, setCantidad1] = useState(0);
 
         const add = () => {
                 if (cantidad1 < 6) setCantidad1 (cantidad1+1);
@@ -33,7 +33,7 @@ const ItemCount = () => {
 </svg>
         </button> 
 
-        Producto 1
+        Producto 1: {cantidad1}
 
         <button type="button" id="btnRestar" className="btn btn-primary position-relative" onClick={add}>
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
