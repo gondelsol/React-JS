@@ -2,30 +2,31 @@ import { useState } from "react";
 
 const ItemCount = (props) => {
 
-        const [cantidad, setCantidad] = useState(0);
 
+        const [cantidad, setCantidad] =  useState ( parseInt(props.initial) );
+        
+
+     //   setCantidad(props.initial);
+        
         const add = () => {
-                if (cantidad < props.stock) setCantidad (cantidad+1);
-                console.log(cantidad);
+                if (cantidad < props.stock) setCantidad (1+cantidad);        
         }
 
         const sustract = () => {
                 if (cantidad > 0) setCantidad (cantidad-1);
-                console.log(cantidad);
         }
 
         const remove = () => {
-                if (cantidad > 0) setCantidad (cantidad-cantidad);
-                console.log(cantidad);
-
+                if (cantidad > 0) setCantidad (0);
         }
-
+console.log (cantidad);
 
 
     return (
         <>
         <h1> Hello!!!</h1>
         <h2> Cantidad de productos en stock {props.stock}</h2>
+        <h2> Cantidad de productos iniciales {props.initial}</h2>
         <div className="container">
         <button type="button" id="btnSustract" className="btn btn-primary position-relative" onClick={sustract}>
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-dash-circle" viewBox="0 0 16 16">
