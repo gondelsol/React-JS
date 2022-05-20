@@ -1,11 +1,11 @@
 import { useState } from "react";
 
-const ItemCount = () => {
+const ItemCount = (props) => {
 
         const [cantidad, setCantidad] = useState(0);
 
         const add = () => {
-                if (cantidad < 5) setCantidad (cantidad+1);
+                if (cantidad < props.stock) setCantidad (cantidad+1);
                 console.log(cantidad);
         }
 
@@ -25,6 +25,7 @@ const ItemCount = () => {
     return (
         <>
         <h1> Hello!!!</h1>
+        <h2> Cantidad de productos en stock {props.stock}</h2>
         <div className="container">
         <button type="button" id="btnSustract" className="btn btn-primary position-relative" onClick={sustract}>
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-dash-circle" viewBox="0 0 16 16">
@@ -54,8 +55,6 @@ const ItemCount = () => {
 
     );
 }
-
-
 
 
 

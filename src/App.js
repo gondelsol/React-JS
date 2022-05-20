@@ -6,9 +6,9 @@ import ItemCount from './components/ItemCount';
 function App() {
   return (
     <div className="App">
-          <Navbar></Navbar>
-          <ItemListContainer></ItemListContainer>
-          <ItemCount></ItemCount>
+          <Navbar />
+          <ItemListContainer />
+          <ItemCount  stock="8" initial="1" />
   
   Trabajo de ReactJS
     </div>
