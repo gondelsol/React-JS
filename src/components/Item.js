@@ -1,17 +1,15 @@
-/* const Item = () => {
+
+const Item = (props) => {
 
     return (
         <>
-
-
-                key={props.id}
-        <div className="video-container">
-            <div className="video-info">
+        <h1>Producto {props.id}</h1>
+              <div className="producto container">
               <h3>{props.name}</h3>
               <p>{props.precio}</p>
               <p>{props.id}</p>
             </div>
-        </div>
+
         
         </>
 
@@ -19,4 +17,3 @@
 }
 
 export default Item;
-*/

@@ -1,12 +1,14 @@
+import Item from "./Item";
 
-const ItemList = (props) => {
+const ItemList = (item) => {
     return (
         <>
+        <Item 
 
-          key={props.id}
-          title={props.name}
-          Precio={props.precio} 
-
+          key={item.id}
+          title={item.name}
+          Precio={item.precio} 
+/>
       </>
     );
 }
