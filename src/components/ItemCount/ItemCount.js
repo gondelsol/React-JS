@@ -24,9 +24,7 @@ console.log (cantidad);
 
     return (
         <>
-        <h1> Hello!!!</h1>
-        <h2> Cantidad de productos en stock {props.stock}</h2>
-        <h2> Cantidad de productos iniciales {props.initial}</h2>
+
         <div className="container">
         <button type="button" id="btnSustract" className="btn btn-primary position-relative" onClick={sustract}>
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-dash-circle" viewBox="0 0 16 16">

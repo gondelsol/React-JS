@@ -11,8 +11,8 @@ const ItemList = (item) => {
 
 {
           ensayos.map((item) => 
-          <div className="d-flex justify-content-between flex-wrap">
-  <Item title={item.name} description={item.description}/>
+          <div className="container d-flex justify-content-between flex-wrap">
+  <Item title={item.name} description={item.description} precio={item.precio} image={item.image}/>
 
           </div>
         
