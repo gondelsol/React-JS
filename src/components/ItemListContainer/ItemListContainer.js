@@ -1,8 +1,8 @@
-import ItemCount from "./ItemCount";
-import customFetch from "../utils/customFetch";
+import ItemCount from "../ItemCount/ItemCount";
+import customFetch from "../../utils/customFetch";
 import { useEffect, useState } from "react";
-import ItemList from "./ItemList";
-const {ensayos} = require('../utils/ensayos');
+import ItemList from "../ItemList/ItemList";
+const {ensayos} = require('../../utils/ensayos');
 
 
 
