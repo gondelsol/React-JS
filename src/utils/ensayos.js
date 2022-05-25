@@ -45,7 +45,7 @@ const ensayos = [
         stock: 33,
         precio: 10.7,
         description: "Ensayos Ácido L-Máctico parecidos a los del INTA",
-        image:"https://inta.gob.ar/sites/default/files/inta_varietales_blend.jpg"
+        image:"https://www.vinetur.com/imagenes/2016/marzo/21/vino_ciencia_investigacion.jpg"
     },
     {
         id: 7,
