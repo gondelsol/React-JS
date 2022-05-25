@@ -22,7 +22,9 @@ const ItemListContainer = () => {
         <>
         <h2> Hi!</h2>
         <p> I am Item list container</p>
-        {cargando ? <p>Cargando...</p> : <ItemList items={datos} />}
+        {cargando ? <div class="spinner-border text-primary" role="status">
+  <span class="sr-only"></span>
+</div> : <ItemList items={datos} />}
   
         <ItemCount stock="18" initial="5" />
 
