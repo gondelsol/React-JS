@@ -11,9 +11,11 @@ const ItemListContainer = () => {
     const [cargando, setCargando] = useState(false)
 
     useEffect(()=> {
-        customFetch (2000, ensayos)
+        setCargando(true);
+        customFetch (5000, ensayos)
         .then(result => setDatos(result))
-        .catch((err => console.log(err)), ()=> setCargando(true))
+        .catch((err => console.log(err)))
+        .finally(()=> setCargando(false))
     }, []);
 
     return (
