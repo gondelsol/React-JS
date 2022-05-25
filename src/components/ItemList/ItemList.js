@@ -10,14 +10,12 @@ const ItemList = (item) => {
     <>
     <div className="container d-flex justify-content-between flex-wrap">
 
-{
+        {
           ensayos.map((item) => (
           <Item title={item.name} description={item.description} precio={item.precio} image={item.image}
           />
 
-          )
-          )
-        }
+          ))}
 
 </div>
     </>
