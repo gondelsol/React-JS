@@ -26,7 +26,7 @@ const ItemDetailConteiner = () => {
 
     useEffect(()=> {
         setLoading(true)
-        getDetail (6000, ensayos[3])
+        getDetail (1000, ensayos[3])
         .then(result => setDetail(result))
         .catch((error) => console.log(error))
         .finally(()=> setLoading(false))
@@ -39,7 +39,7 @@ console.log("detail", detail);
 
 {loading ? <div class="spinner-grow text-primary" role="status">
   <span class="visually-hidden">Loading...</span>
-</div> : <ItemDetail  items={detail} />}
+</div> : <ItemDetail  key={detail.id} title={detail.name} description={detail.description} precio={detail.precio} image={detail.image} stock={detail.stock} />}
 
         </>
     );
