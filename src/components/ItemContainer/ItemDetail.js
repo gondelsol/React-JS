@@ -5,9 +5,9 @@ const ItemDetail = (props) => {
     return (
         <>
         
-        <h1>Nuestro Servicio</h1>
-        <h1> {props?.title}</h1>
-        <h2>Descripción</h2>
+        <h1>Servicio</h1>
+        <h2>Análisis {props?.title}</h2>
+        <h3>Descripción</h3>
         <p> {props?.description}</p>
         <h3>Precio</h3>
         <p>$ {props?.precio}</p>
