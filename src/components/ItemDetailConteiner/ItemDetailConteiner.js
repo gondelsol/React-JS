@@ -2,6 +2,7 @@ import { ensayos } from "../../utils/ensayos";
 import { useEffect, useState } from "react";
 import React from "react";
 import ItemDetail from "../ItemContainer/ItemDetail";
+import getDetail from "../GetDetail/GetDetail"
 
 
 const ItemDetailConteiner = () => {
@@ -10,23 +11,12 @@ const ItemDetailConteiner = () => {
     const [loading, setLoading] = useState(false);
 
 
-    const getDetail = async (time, task) => {
-        let confirmacion= true;
-        return new Promise ( (resolve, reject) => {
-            setTimeout (() => {
-                if (confirmacion) {
-                    resolve (task);
-                } else {
-                    reject("Error en getDetail");
-                }
-            }, time);
-        });
-    }
+
 
 
     useEffect(()=> {
         setLoading(true)
-        getDetail (1000, ensayos[3])
+        getDetail (6000, ensayos[5])
         .then(result => setDetail(result))
         .catch((error) => console.log(error))
         .finally(()=> setLoading(false))
