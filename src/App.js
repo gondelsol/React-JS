@@ -10,8 +10,6 @@ function App() {
           <Navbar />
           {/*<ItemListContainer />*/}
           <ItemDetailConteiner />
-
-  Trabajo de ReactJS
     </div>
   );
 }
