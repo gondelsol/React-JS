@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 
 const Item = (props) => {
 
@@ -5,11 +7,12 @@ const Item = (props) => {
 
     <>
 <div className="card" style={{width:'18rem', margin:'.5rem'}}>
-<img className="card-img-top" src={props?.image} alt={props.title} />
+<img className="card-img-top img-thumbnail" src={props?.image} alt={props.name} />
 <div className="card-body">
-    <h5 className="card-title">{props?.title}</h5>
+    <h5 className="card-title">{props?.name}</h5>
     <p className="card-text">{props?.resumen}</p>
-    <button type="button" class="btn btn-primary" onClick="">Info</button>
+    <p className="card-text">identificacion: {props?.id} </p>
+    <button type="button" class="btn btn-primary" onClick=""> <Link to= { `/item/${props?.id}` }  > Info</Link></button>
 
   </div>
 
@@ -21,4 +24,6 @@ const Item = (props) => {
 
 };
 
+
 export default Item;
+

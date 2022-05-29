@@ -3,12 +3,14 @@ import { useEffect, useState } from "react";
 import React from "react";
 import ItemDetail from "../ItemContainer/ItemDetail";
 import getDetail from "../GetDetail/GetDetail"
+import { useParams } from "react-router-dom";
 
 
 const ItemDetailConteiner = () => {
 
     const [detail, setDetail]= useState([]);
     const [loading, setLoading] = useState(false);
+    const { key } = useParams();
 
 
 
@@ -16,7 +18,7 @@ const ItemDetailConteiner = () => {
 
     useEffect(()=> {
         setLoading(true)
-        getDetail (6000, ensayos[5])
+        getDetail (2000, ensayos.find(detail => detail.id === key))
         .then(result => setDetail(result))
         .catch((error) => console.log(error))
         .finally(()=> setLoading(false))
@@ -29,7 +31,7 @@ console.log("detail", detail);
 
 {loading ? <div class="spinner-grow text-primary" role="status">
   <span class="visually-hidden">Loading...</span>
-</div> : <ItemDetail  key={detail.id} title={detail.name} description={detail.description} precio={detail.precio} image={detail.image} stock={detail.stock} />}
+</div> : <ItemDetail  key={detail.id} name={detail.name} description={detail.description} precio={detail.precio} image={detail.image} stock={detail.stock} />}
 
         </>
     );

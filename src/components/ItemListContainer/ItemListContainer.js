@@ -19,8 +19,6 @@ const ItemListContainer = () => {
 
     return (
         <>
-        <h2> Hi!</h2>
-        <p> I am Item list container</p>
         {cargando ? <div className="spinner-border text-primary" role="status">
   <span className="sr-only"></span>
 </div> : <ItemList items={datos} />}
