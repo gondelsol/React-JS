@@ -13,11 +13,23 @@ const ItemListContainer = () => {
 
     useEffect(()=> {
 
+        if ( id ==='1' || id ==='2') {
             setCargando(true);
-            customFetch (2000, ensayos.filter( datos => datos.categoryId === parseInt(id)))
+            customFetch (2000, ensayos.filter( item => item.categoryId === parseInt(id)))
             .then(result => setDatos(result))
             .catch((err => console.log(err)))
             .finally(()=> setCargando(false))
+
+        } else {
+            setCargando(true);
+            customFetch (2000, ensayos)
+            .then(result => setDatos(result))
+            .catch((err => console.log(err)))
+            .finally(()=> setCargando(false))
+
+        }
+
+
     }, [id]);
 
     return (
