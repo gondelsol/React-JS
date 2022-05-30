@@ -10,15 +10,12 @@ const ItemDetailConteiner = () => {
 
     const [detail, setDetail]= useState([]);
     const [loading, setLoading] = useState(false);
-    const { key } = useParams();
-
-
-
+    const { id } = useParams(); //tengo acceso a lo que está en la URL
 
 
     useEffect(()=> {
         setLoading(true)
-        getDetail (2000, ensayos.find(detail => detail.id === key))
+        getDetail (2000, ensayos.find(detail => detail.id === parseInt(id)))
         .then(result => setDetail(result))
         .catch((error) => console.log(error))
         .finally(()=> setLoading(false))
@@ -31,7 +28,7 @@ console.log("detail", detail);
 
 {loading ? <div class="spinner-grow text-primary" role="status">
   <span class="visually-hidden">Loading...</span>
-</div> : <ItemDetail  key={detail.id} name={detail.name} description={detail.description} precio={detail.precio} image={detail.image} stock={detail.stock} />}
+</div> : <ItemDetail  key={detail.id} id={detail.id} name={detail.name} description={detail.description} precio={detail.precio} image={detail.image} stock={detail.stock} />}
 
         </>
     );

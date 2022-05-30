@@ -12,7 +12,7 @@ const ItemList = (item) => {
 
         {
           ensayos.map((item) => (
-          <Item key={item.id} id={item.id} name={item.name} resumen={item.resumen} image={item.image}/>
+          <Item key={item.id} categoryId={item.categoryId} id={item.id} name={item.name} resumen={item.resumen} image={item.image}/>
 
           ))}
 

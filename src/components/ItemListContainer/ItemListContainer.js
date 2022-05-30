@@ -1,21 +1,24 @@
 import customFetch from "../../utils/customFetch";
 import { useEffect, useState } from "react";
 import ItemList from "../ItemList/ItemList";
+import { useParams } from "react-router-dom";
 const {ensayos} = require('../../utils/ensayos');
 
 
 
 const ItemListContainer = () => {
     const [datos, setDatos]=useState([]);
-    const [cargando, setCargando] = useState(false)
+    const {id} = useParams();
+    const [cargando, setCargando] = useState(false);
 
     useEffect(()=> {
-        setCargando(true);
-        customFetch (3000, ensayos)
-        .then(result => setDatos(result))
-        .catch((err => console.log(err)))
-        .finally(()=> setCargando(false))
-    }, []);
+
+            setCargando(true);
+            customFetch (2000, ensayos.filter( datos => datos.categoryId === parseInt(id)))
+            .then(result => setDatos(result))
+            .catch((err => console.log(err)))
+            .finally(()=> setCargando(false))
+    }, [id]);
 
     return (
         <>

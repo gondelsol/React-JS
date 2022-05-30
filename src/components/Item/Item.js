@@ -11,8 +11,9 @@ const Item = (props) => {
 <div className="card-body">
     <h5 className="card-title">{props?.name}</h5>
     <p className="card-text">{props?.resumen}</p>
-    <p className="card-text">identificacion: {props?.id} </p>
-    <button type="button" class="btn btn-primary" onClick=""> <Link to= { `/item/${props?.id}` }  > Info</Link></button>
+    <p className="card-text">Identificacion: {props?.id} </p>
+    <p className="card-text">Categoria: {props?.categoryId} </p>
+    <button type="button" class="btn btn-primary" onClick=""> <Link to= { `/item/${props?.id}` } style={{color: 'white'}}> Info</Link></button>
 
   </div>
 

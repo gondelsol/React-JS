@@ -22,10 +22,10 @@ const Navbar = () => {
           <a className="nav-link" href=" ">Servicios</a>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href=" ">Fenolicos</a>
+          <a className="nav-link" href=" "><Link to='/category/1' style={{color: 'white'}}>Basicos </Link></a>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href=" ">Basicos</a>
+          <a className="nav-link" href=" "> <Link to='/category/2' style={{color: 'white'}}> Fenolicos </Link> </a>
         </li>
         <li className="nav-item">
         <a className="nav-link" href=" ">Loggin</a>
