@@ -4,7 +4,7 @@ import ItemCount from "../ItemCount/ItemCount";
 const ItemDetail = (props) => {
     return (
         <>
-        <div className="Container">
+        <div className="Container itemDetail">
         <h1>Servicio</h1>
         <h2>Análisis {props?.name}</h2>
         <h3>Descripción</h3>

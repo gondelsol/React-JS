@@ -39,3 +39,14 @@
   }
 }
 
+.itemDetail {
+  text-align: justify;
+  padding: 20px;
+}
+
+.Count {
+  margin: 20px 20px 20px 20px;
+}
+.btnCount {
+  margin: 0 20px 0 20px;
+}

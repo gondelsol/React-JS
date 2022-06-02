@@ -34,9 +34,17 @@ const Navbar = () => {
         <a className="nav-link" href=" ">Password</a>
         </li>
       </ul>
+
+  
     </div>
   </div>
+  
   <div className="container right" >
+  <form className="d-flex" role="search">
+      <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+    
+        <button className="btn btn-secondary" type="submit">Search</button>
+</form>
 
 
   <CartWidget />
