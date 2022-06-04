@@ -7,9 +7,9 @@ const ItemDetail = (props) => {
 
     const [itemCount, setItemCount] = useState(0);
 
-    const onAdd = (cantidad) => {
-        alert ("has selccionado" + cantidad + "productos");
-        setItemCount (cantidad);
+    const onAdd = (qty) => {
+        alert ("has selccionado" + qty + "productos");
+        setItemCount (qty);
     }
 
 
