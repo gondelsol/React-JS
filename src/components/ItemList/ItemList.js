@@ -20,7 +20,8 @@ const ItemList = (item) => {
             name={item.name}
             resumen={item.resumen}
             image={item.image}
-          />
+
+           />
         ))}
 
       </div>

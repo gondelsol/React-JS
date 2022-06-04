@@ -15,7 +15,7 @@ const ItemListContainer = () => {
 
         if ( id ==='1' || id ==='2') {
             setCargando(true);
-            customFetch (2000, ensayos.filter( item => item.categoryId === parseInt(id)))
+            customFetch (1000, ensayos.filter( item => item.categoryId === parseInt(id)))
             .then(result => setDatos(result))
             .catch((err => console.log(err)))
             .finally(()=> setCargando(false))

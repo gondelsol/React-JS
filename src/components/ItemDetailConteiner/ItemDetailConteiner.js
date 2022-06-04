@@ -15,7 +15,7 @@ const ItemDetailConteiner = () => {
 
     useEffect(()=> {
         setLoading(true)
-        getDetail (2000, ensayos.find(detail => detail.id === parseInt(id)))
+        getDetail (1000, ensayos.find(detail => detail.id === parseInt(id)))
         .then(result => setDetail(result))
         .catch((error) => console.log(error))
         .finally(()=> setLoading(false))
