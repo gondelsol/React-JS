@@ -10,7 +10,7 @@ useParams();
 
         
     <>
-        <h1>hola</h1>
+        <h1>Este es el carro de compras</h1>
     </>
 
     );

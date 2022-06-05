@@ -6,6 +6,7 @@ import { useState } from "react";
 const ItemDetail = (props) => {
 
     const [itemCount, setItemCount] = useState(0);
+    const [cambiarEstado, setCambiarEstado] = useState (true);
 
     const onAdd = (qty) => {
         alert ("has selccionado" + qty + "productos");
@@ -27,11 +28,19 @@ const ItemDetail = (props) => {
 
             </div>
 
-        {
-              itemCount === 0
-              ? <ItemCount stock={props?.stock} initial={itemCount} onAdd={onAdd} />
-              : <Link to={'/cart'}><button type="button" class="btn btn-success">Terminar compra</button> </Link>
-        }
+            {cambiarEstado ? (
+
+<ItemCount
+  stock={props?.stock}
+  initial={itemCount}
+  onAdd={onAdd}
+  cambiar={setCambiarEstado} />
+)
+: ( <Link to={"/cart"}>
+  <button type="button" class="btn btn-success">Terminar compra</button>{" "}
+  </Link>
+
+)}
 
         </>
     );
