@@ -1,7 +1,7 @@
 import { ensayos } from "../../utils/ensayos";
 import { useEffect, useState } from "react";
 import React from "react";
-import ItemDetail from "../ItemContainer/ItemDetail";
+import ItemDetail from "../ItemDetail/ItemDetail";
 import getDetail from "../GetDetail/GetDetail"
 import { useParams } from "react-router-dom";
 

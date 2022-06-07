@@ -1,16 +1,22 @@
 import { Link } from "react-router-dom";
 import ItemCount from "../ItemCount/ItemCount";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { CartContext } from "../CartContext/CartContext";
 
 
-const ItemDetail = (props) => {
+const ItemDetail = ({item}) => {
 
     const [itemCount, setItemCount] = useState(0);
     const [cambiarEstado, setCambiarEstado] = useState (true);
 
+    const test = useContext (CartContext);
+
     const onAdd = (qty) => {
         alert ("has selccionado" + qty + "productos");
         setItemCount (qty);
+
+        //agregar producto al carro desde una función global
+        test.addToCart(item);
     }
 
 
@@ -19,19 +25,19 @@ const ItemDetail = (props) => {
         <>
         <div className="Container itemDetail">
         <h1>Servicio</h1>
-        <h2>Análisis {props?.name}</h2>
+        <h2>Análisis {item.name}</h2>
         <h3>Descripción</h3>
-        <p> {props?.description}</p>
+        <p> {item.description}</p>
         <h3>Precio</h3>
-        <p>$ {props?.precio}</p>
-        <img src={props?.image} alt={props.title} />
+        <p>$ {item.precio}</p>
+        <img src={item.image} alt={item.title} />
 
             </div>
 
             {cambiarEstado ? (
 
 <ItemCount
-  stock={props?.stock}
+  stock={item.stock}
   initial={itemCount}
   onAdd={onAdd}
   cambiar={setCambiarEstado} />
