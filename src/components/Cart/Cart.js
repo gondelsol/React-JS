@@ -1,19 +1,22 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { useParams } from "react-router-dom";
 import { CartContext } from "../CartContext/CartContext";
 
-
 const Cart = () => {
 
-    const carro = useContext (CartContext);
-
-
 useParams();
+
+const context = useContext (CartContext);
+
+console.log(context);
 
     return (
     <>
         <h1>Este es el carro de compras</h1>
-        <p>{carro}</p>
+
+        <button type="button" class="btn btn-warning" onClick={()=>removeItem()}>Remove Item</button>
+        <button type="button" class="btn btn-dark" onClick={()=>clear()}>Delete cart</button>
+
     </>
     );
 }

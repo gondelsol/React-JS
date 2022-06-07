@@ -19,9 +19,8 @@ const ItemList = (item) => {
             id={item.id}
             name={item.name}
             resumen={item.resumen}
-            image={item.image}
+            image={item.image} />
 
-           />
         ))}
 
       </div>
