@@ -4,19 +4,21 @@ import { useContext, useState } from "react";
 import { CartContext } from "../CartContext/CartContext";
 
 
-const ItemDetail = ({item}) => {
+const ItemDetail = (item) => {
 
     const [itemCount, setItemCount] = useState(0);
     const [cambiarEstado, setCambiarEstado] = useState (true);
+
 
     const test = useContext (CartContext);
 
     const onAdd = (qty) => {
         alert ("has selccionado" + qty + "productos");
         setItemCount (qty);
-
+        console.log(item);
+        console.log(qty);
         //agregar producto al carro desde una función global
-        test.addToCart(item);
+        test.addItem(item);
     }
 
 
@@ -43,7 +45,7 @@ const ItemDetail = ({item}) => {
   cambiar={setCambiarEstado} />
 )
 : ( <Link to={"/cart"}>
-  <button type="button" class="btn btn-success">Terminar compra</button>{" "}
+  <button type="button" class="btn btn-success">Go to cart</button>
   </Link>
 
 )}

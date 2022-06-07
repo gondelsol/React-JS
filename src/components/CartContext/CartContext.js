@@ -5,6 +5,7 @@ export const CartContext = createContext ();
 const CartContextProvider = ({children}) => {
 
     const [cartList, setCartList] = useState ([]);
+    console.log(cartList);
 
     const addToCart = (item) => {
         setCartList ([
@@ -16,14 +17,14 @@ const CartContextProvider = ({children}) => {
     const addItem = (item, qty) => {
         const found = cartList.found(el => el.include === item.id);
         const findDuplicated = (found, cartList) => {
-            cartList.forEach(element => {
+            cartList.forEach (element => {
                 if (found.id === element.id) { return element.cartList = qty + element.cartList}
             });
         }
         if (found) {findDuplicated(found, cartList)} else { setCartList ( [...cartList, item])}
     }
 
-    const clear = () => {
+    const clearList = () => {
         setCartList([]);
     }
 
@@ -37,9 +38,11 @@ const CartContextProvider = ({children}) => {
         console.log (found);
     }
 
+    const data = {cartList, addToCart, addItem, clearList, removeItem, isInCar};
+
 
     return (
-        <CartContext.Provider value={{cartList, addToCart, addItem, clear, removeItem, isInCar}}>
+        <CartContext.Provider value={data}>
         {children}
         </CartContext.Provider>
 
