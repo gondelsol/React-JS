@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 const Navbar = () => {
     return (
         <div className="Barra">
-            
 
 <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
   <div className="container-fluid">
@@ -13,7 +12,7 @@ const Navbar = () => {
       <span className="navbar-toggler-icon"></span>
     </button>
     <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
-      <a className="navbar-brand" href=" "><Link to='/' style={{color: 'white'}}>U&V Análisis</Link></a>
+    <Link to='/' ><a className="navbar-brand" href=" ">U&V Análisis</a></Link>
       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
         <li className="nav-item">
           <a className="nav-link" aria-current="page" href=" ">Inicio</a>
@@ -22,10 +21,10 @@ const Navbar = () => {
           <a className="nav-link" href=" ">Servicios</a>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href=" "><Link to='/category/1' style={{color: 'white'}}>Basicos </Link></a>
+        <Link to='/category/1' ><a className="nav-link" href=" "> Basicos </a></Link>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href=" "> <Link to='/category/2' style={{color: 'white'}}> Fenolicos </Link> </a>
+        <Link to='/category/2' > <a className="nav-link" href=" ">  Fenolicos  </a></Link>
         </li>
         <li className="nav-item">
         <a className="nav-link" href=" ">Loggin</a>

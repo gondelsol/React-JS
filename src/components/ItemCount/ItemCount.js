@@ -11,12 +11,13 @@ const ItemCount = (item) => {
 
         const add = () => {
                 if (cantidad < item.stock) setCantidad (1+cantidad);
+                console.log("el item del contador es" + item );
         }
 
         const sustract = () => {
                 if (cantidad > 0) setCantidad (cantidad-1);
         }
-
+ 
 console.log (cantidad);
 
 

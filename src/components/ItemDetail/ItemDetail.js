@@ -13,11 +13,13 @@ const ItemDetail = (item) => {
     const test = useContext (CartContext);
 
     const onAdd = (qty, item) => {
-        alert ("La cantidad seleccionada es:  " + qty);
+        alert ("La cantidad seleccionada es:  " + qty +"el objeto es " + item);
         setItemCount (qty);
         //agregar producto al carro desde una función global
         test.addToCart(item);
     }
+
+    console.log(" el producto del ItemDetail es: " + item);
 
 
     return (
@@ -32,6 +34,7 @@ const ItemDetail = (item) => {
         <img src={item.image} alt={item.title} />
 
             </div>
+
 
             {cambiarEstado ? (
 

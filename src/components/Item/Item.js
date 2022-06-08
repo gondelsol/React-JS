@@ -11,7 +11,7 @@ const Item = (item) => {
 <div className="card-body">
     <h5 className="card-title">{item.name}</h5>
     <p className="card-text">{item.resumen}</p>
-    <button type="button" class="btn btn-primary" onClick=""> <Link to= { `/item/${item.id}` } style={{color: 'white'}}> Info</Link></button>
+    {<Link to= { `/item/${item.id}` } style={{color: 'white'}}> <button type="button" class="btn btn-primary" onClick="">  Info</button> </Link>}
 </div>
 
 </div>

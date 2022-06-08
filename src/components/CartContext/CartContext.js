@@ -8,6 +8,8 @@ const CartContextProvider = ({children}) => {
     console.log(cartList);
 
     const addToCart = (item) => {
+        console.log("item seleccionado" + item);
+
         setCartList ([
             ...cartList,
             item
