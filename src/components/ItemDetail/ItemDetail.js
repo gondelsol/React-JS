@@ -12,15 +12,12 @@ const ItemDetail = (item) => {
 
     const test = useContext (CartContext);
 
-    const onAdd = (qty) => {
-        alert ("has selccionado" + qty + "productos");
+    const onAdd = (qty, item) => {
+        alert ("La cantidad seleccionada es:  " + qty);
         setItemCount (qty);
-        console.log(item);
-        console.log(qty);
         //agregar producto al carro desde una función global
-        test.addItem(item);
+        test.addToCart(item);
     }
-
 
 
     return (
@@ -42,7 +39,8 @@ const ItemDetail = (item) => {
   stock={item.stock}
   initial={itemCount}
   onAdd={onAdd}
-  cambiar={setCambiarEstado} />
+  cambiar={setCambiarEstado}
+   />
 )
 : ( <Link to={"/cart"}>
   <button type="button" class="btn btn-success">Go to cart</button>
