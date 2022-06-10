@@ -44,16 +44,11 @@ const Navbar = () => {
     
         <button className="btn btn-secondary" type="submit">Search</button>
 </form>
-
   <CartWidget />
   </div>
-
-
-
 </nav>
-
         </div>
-        
+
     );
 }
 

@@ -7,7 +7,7 @@ const CartContextProvider = ({children}) => {
     const [cartList, setCartList] = useState ({});
     console.log(cartList);
 
-    const addToCart = (item) => {
+    const addToCart = ({item}) => {
         console.log("item seleccionado"  ,item);
 
         setCartList ([

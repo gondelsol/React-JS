@@ -16,7 +16,7 @@ const ItemDetail = ({ name, description, precio, image, item}) => {
         alert ("La cantidad seleccionada es:  " + qty + "el objeto es " ,item);
         setItemCount (qty);
         //agregar producto al carro desde una función global
-        test.addToCart(item);
+        test.addToCart(item,qty);
     }
 
     console.log(" el objeto del ItemDetail es: " ,item);
