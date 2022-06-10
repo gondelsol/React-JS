@@ -4,11 +4,11 @@ export const CartContext = createContext ();
 
 const CartContextProvider = ({children}) => {
 
-    const [cartList, setCartList] = useState ([]);
+    const [cartList, setCartList] = useState ({});
     console.log(cartList);
 
     const addToCart = (item) => {
-        console.log("item seleccionado" + item);
+        console.log("item seleccionado"  ,item);
 
         setCartList ([
             ...cartList,
@@ -51,4 +51,4 @@ const CartContextProvider = ({children}) => {
     );
 }
 
-export default CartContextProvider; 
+export default CartContextProvider;

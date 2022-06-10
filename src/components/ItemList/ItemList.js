@@ -1,9 +1,9 @@
 //import { ensayos } from "../../utils/ensayos";
 import Item from "../Item/Item";
 
-const ItemList = (item) => {
+const ItemList = ({items}) => {
 
-  console.log(item, "item");
+  console.log('items', items)
 
   return (
 
@@ -11,7 +11,7 @@ const ItemList = (item) => {
 
       <div className="container d-flex justify-content-between flex-wrap">
 
-        {item.items.map((item) => (
+        {items.map((item) => (
 
           <Item
             key={item.id}

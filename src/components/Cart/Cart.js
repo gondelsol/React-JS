@@ -11,7 +11,7 @@ useParams();
 
 const test = useContext (CartContext);
 
-console.log("el contenido del carro es:  " + test.cartList);
+console.log("el contenido del carro es:  "  ,test.cartList);
 
     return (
     <>

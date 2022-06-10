@@ -5,7 +5,6 @@ import { useParams } from "react-router-dom";
 const {ensayos} = require('../../utils/ensayos');
 
 
-
 const ItemListContainer = () => {
     const [datos, setDatos]=useState([]);
     const {id} = useParams();

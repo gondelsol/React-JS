@@ -8,15 +8,15 @@ import { useParams } from "react-router-dom";
 
 const ItemDetailConteiner = () => {
 
-    const [detail, setDetail]= useState([]);
+    const [detail, setDetail]= useState({});
     const [loading, setLoading] = useState(false);
     const { id } = useParams(); //tengo acceso a lo que está en la URL
 
 
     useEffect(()=> {
         setLoading(true)
-        getDetail (1000, ensayos.find(detail => detail.id === parseInt(id)))
-        .then(result => setDetail(result))
+        getDetail (1000, ensayos)
+        .then(result => setDetail(result.find(detail => detail.id === parseInt(id))))
         .catch((error) => console.log(error))
         .finally(()=> setLoading(false))
        }, []);
@@ -26,9 +26,9 @@ console.log("detail", detail);
     return (
         <>
 
-{loading ? <div class="spinner-grow text-primary" role="status">
-  <span class="visually-hidden">Loading...</span>
-</div> : <ItemDetail  key={detail.id} id={detail.id} name={detail.name} description={detail.description} precio={detail.precio} image={detail.image} stock={detail.stock} />}
+{loading ? <div className="spinner-grow text-primary" role="status">
+  <span className="visually-hidden">Loading...</span>
+</div> : <ItemDetail item={detail} id={detail.id} name={detail.name} description={detail.description} precio={detail.precio} image={detail.image} stock={detail.stock} />}
 
         </>
     );
