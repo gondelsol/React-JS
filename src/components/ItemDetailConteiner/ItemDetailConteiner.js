@@ -28,7 +28,7 @@ console.log("detail", detail);
 
 {loading ? <div className="spinner-grow text-primary" role="status">
   <span className="visually-hidden">Loading...</span>
-</div> : <ItemDetail item={detail} id={detail.id} name={detail.name} description={detail.description} precio={detail.precio} image={detail.image} stock={detail.stock} />}
+</div> : <ItemDetail item={detail} />}
 
         </>
     );

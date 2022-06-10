@@ -4,7 +4,9 @@ import { useContext, useState } from "react";
 import { CartContext } from "../CartContext/CartContext";
 
 
-const ItemDetail = ({ name, description, precio, image, item}) => {
+const ItemDetail = ({item}) => {
+
+const { id, name, description, precio, image, stock} = item;
 
     const [itemCount, setItemCount] = useState(0);
     const [cambiarEstado, setCambiarEstado] = useState (true);
@@ -12,11 +14,11 @@ const ItemDetail = ({ name, description, precio, image, item}) => {
 
     const test = useContext (CartContext);
 
-    const onAdd = (qty, item) => {
-        alert ("La cantidad seleccionada es:  " + qty + "el objeto es " ,item);
+    const onAdd = ({qty, item}) => {
         setItemCount (qty);
         //agregar producto al carro desde una función global
-        test.addToCart(item,qty);
+        console.log("el objeto para agregar en el carro es" ,item)
+        test.addToCart(item);
     }
 
     console.log(" el objeto del ItemDetail es: " ,item);
@@ -32,6 +34,9 @@ const ItemDetail = ({ name, description, precio, image, item}) => {
         <p> {description}</p>
         <h3>Precio</h3>
         <p>$ {precio}</p>
+        <p>Numero de identificacion {id}</p>
+        <p>Productos en Stock {stock}</p>
+
         <img src={image} alt={name} />
 
             </div>
