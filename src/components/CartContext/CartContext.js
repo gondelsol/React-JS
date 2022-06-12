@@ -7,25 +7,24 @@ const CartContextProvider = ({children}) => {
     const [cartList, setCartList] = useState ([]);
 
 
-    const addToCart = (item) => {
+    const addToCart = ({item}, qty) => {
 
         console.log('Soy el addCart, estoy recibiendo el siguiente objeto',item);
-
         setCartList ([
             ...cartList,
-            item
+            {
+                id:  item.id,
+                name: item.name,
+                category: item.category,
+                categoryId: item.categoryId,
+                resumen: item.resumen,
+                stock: item.stock,
+                precio: item.precio,
+                description: item.description,
+                image: item.image,
+                qtyItem: qty,
+            }
         ]);
-
-        }
-
-    const addItem = (item, qty) => {
-        const found = cartList.found(item => item.include === item.id);
-        const findDuplicated = (found, cartList) => {
-            cartList.forEach (element => {
-                if (found.id === element.id) { return element.cartList = qty + element.cartList}
-            });
-        }
-        if (found) {findDuplicated(found, cartList)} else { setCartList ( [...cartList, item])}
     }
 
     const clearList = () => {
@@ -34,10 +33,35 @@ const CartContextProvider = ({children}) => {
 
     const removeItem = (id) => {
         console.log(id);
-        const result = test.cartList.filter( item => item.id  !== parseInt(id));
-        console.log('el array filtrado es: '  ,result);
+        const result = cartList.filter(item => item.id !== parseInt(id));
+        console.log("el array filtrado es: ", result);
         setCartList(result);
-    }
+        }
+
+        const addItem = ({item}, qty) => {
+            let found = cartList.find( product => product.id === item.id);
+            if ( found === undefined) {
+                setCartList ([
+                    ...cartList,
+                    {
+                        id:  item.id,
+                        name: item.name,
+                        category: item.category,
+                        categoryId: item.categoryId,
+                        resumen: item.resumen,
+                        stock: item.stock,
+                        precio: item.precio,
+                        description: item.description,
+                        image: item.image,
+                        qtyItem: qty,
+                    }
+                ]);
+            } else {
+                found.qtyItem += qty;
+            }
+        }
+
+
 
     const isInCar = (item) => {
         const found = cartList.find(el => el.id === item.id)

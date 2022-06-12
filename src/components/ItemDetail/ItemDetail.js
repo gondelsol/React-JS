@@ -12,9 +12,11 @@ const { id, name, description, precio, image, stock} = item;
     const [cambiarEstado, setCambiarEstado] = useState (true);
     const test = useContext (CartContext);
 
+
+
     const onAdd = (qty) => {
         setItemCount (qty);
-        test.addToCart({item});
+        test.addItem({item}, qty);
     }
 
     return (
@@ -26,7 +28,6 @@ const { id, name, description, precio, image, stock} = item;
         <p> {description}</p>
         <h3>Precio</h3>
         <p>$ {precio}</p>
-        <p>Numero de identificacion {id}</p>
         <p>Productos en Stock {stock}</p>
 
         <img src={image} alt={name} />
