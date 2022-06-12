@@ -9,7 +9,7 @@ const ensayos = [
         precio: 10.7,
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque eum, facere est accusamus quia sunt? Reiciendis deserunt cum unde adipisci consectetur eum voluptatibus quis incidunt quia aspernatur. Quo beatae laudantium et nobis incidunt sunt molestiae, corrupti cupiditate consequatur ut id. Quo dolore deleniti, perferendis quis sunt blanditiis temporibus veniam quasi nostrum voluptates aut ipsam numquam voluptate porro ex accusantium asperiores doloremque necessitatibus quidem incidunt beatae exercitationem praesentium nesciunt. Expedita facere est sed molestias ut, quasi doloremque libero numquam recusandae fugit obcaecati maxime cumque quia totam quisquam voluptate esse incidunt? Ex pariatur saepe voluptas velit amet aliquam blanditiis omnis atque repudiandae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita ea velit deleniti dolorem quaerat! Earum facilis quia sint ut alias, velit doloribus tempore inventore quo repellat quibusdam, rerum temporibus id harum facere quos neque explicabo laboriosam.",
         image: "https://gastronomiaycia.republica.com/wp-content/uploads/2017/08/ava_winery_1-680x451.jpg"
-        
+
     },
     {
         id: 2,

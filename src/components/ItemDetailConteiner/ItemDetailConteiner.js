@@ -21,8 +21,6 @@ const ItemDetailConteiner = () => {
         .finally(()=> setLoading(false))
        }, []);
 
-console.log("detail", detail);
-
     return (
         <>
 

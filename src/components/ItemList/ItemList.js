@@ -3,8 +3,6 @@ import Item from "../Item/Item";
 
 const ItemList = ({items}) => {
 
-  console.log('items', items)
-
   return (
 
     <>

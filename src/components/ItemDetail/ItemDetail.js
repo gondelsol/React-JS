@@ -10,20 +10,12 @@ const { id, name, description, precio, image, stock} = item;
 
     const [itemCount, setItemCount] = useState(0);
     const [cambiarEstado, setCambiarEstado] = useState (true);
-
-
     const test = useContext (CartContext);
 
-    const onAdd = ({qty, item}) => {
+    const onAdd = (qty) => {
         setItemCount (qty);
-        //agregar producto al carro desde una función global
-        console.log("el objeto para agregar en el carro es" ,item)
-        test.addToCart(item);
+        test.addToCart({item});
     }
-
-    console.log(" el objeto del ItemDetail es: " ,item);
-    console.log(" el producto del ItemDetail es: " + item.name);
-
 
     return (
         <>
@@ -47,7 +39,7 @@ const { id, name, description, precio, image, stock} = item;
 <ItemCount
   name={name}
   precio={precio}
-  stock={item.stock}
+  stock={stock}
   initial={itemCount}
   onAdd={onAdd}
   cambiar={setCambiarEstado}
