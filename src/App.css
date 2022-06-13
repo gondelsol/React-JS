@@ -29,6 +29,20 @@
   color: #61dafb;
 }
 
+.carroContenedor {
+  border: lightblue solid 1px;
+  border-radius: 3px;
+  background-color: antiquewhite;
+}
+
+.general {
+  margin: 30px;
+  padding: 30px;
+  align-content: center;
+  text-align: center;
+  border: lightblue 1px solid;
+  border-radius: 5px;
+  }
 
 @keyframes App-logo-spin {
   from {

@@ -24,9 +24,13 @@ const ItemDetailConteiner = () => {
     return (
         <>
 
-{loading ? <div className="spinner-grow text-primary" role="status">
-  <span className="visually-hidden">Loading...</span>
-</div> : <ItemDetail item={detail} />}
+{loading ?
+
+    <div className="text-center">
+        <div className="spinner-grow text-primary" role="status">
+        <span className="visually-hidden">Loading...</span>
+        </div>
+    </div> : <ItemDetail item={detail} />}
 
         </>
     );
