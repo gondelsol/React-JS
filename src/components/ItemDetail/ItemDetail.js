@@ -48,7 +48,7 @@ const { name, description, precio, image, stock} = item;
                 />
                 )
                 : ( <Link to={'/cart'}>
-                <button type="button" class="btn btn-success">Go to cart</button>
+                <button type="button" className="btn btn-success">Go to cart</button>
                 </Link>
 
                 )}
