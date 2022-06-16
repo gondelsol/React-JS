@@ -1,9 +1,11 @@
-import { ensayos } from "../../utils/ensayos";
+
 import { useEffect, useState } from "react";
 import React from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import getDetail from "../GetDetail/GetDetail"
 import { useParams } from "react-router-dom";
+import { doc, getDoc} from "firebase/firestore";
+import db from "../../utils/firebaseConfig";
 
 
 const ItemDetailConteiner = () => {
@@ -12,14 +14,31 @@ const ItemDetailConteiner = () => {
     const [loading, setLoading] = useState(false);
     const { id } = useParams(); //tengo acceso a lo que está en la URL
 
+const mostrarUnProducto = async (itemId) => {
+
+    const docRef = doc(db, "Servicios", "itemId");
+    const docSnap = await getDoc(docRef);
+    
+    if (docSnap.exists()) {
+      console.log("Document data:", docSnap.data());
+    } else {
+      // doc.data() will be undefined in this case
+      console.log("No such document!");
+    }
+
+    return docRef;
+
+}
+
 
     useEffect(()=> {
+
         setLoading(true)
-        getDetail (1000, ensayos)
+        getDetail (1000, mostrarUnProducto(id))
         .then(result => setDetail(result.find(detail => detail.id === parseInt(id))))
         .catch((error) => console.log(error))
         .finally(()=> setLoading(false))
-       }, []);
+       }, [id]);
 
     return (
         <>

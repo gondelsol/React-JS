@@ -1,13 +1,23 @@
 import db from "../../utils/firebaseConfig";
-import { collection, getDocs } from "firebase/firestore";
+import { collection, query, where, getDocs, DocumentSnapshot } from "firebase/firestore";
 
+export const firebaseFetch = async (id) => {
+    let q;
 
-const firebaseFetch = async () => {
-    const querySnapshot = await getDocs(collection(db, "Servicios"));
-    querySnapshot.forEach((doc) => {
-        console.log(doc.id, "=>" , doc.data());
-    });
+    if (id) {
+        q = query(collection(db, "Services"), where("Services", "==", id));
+    } else {
+        q = query(collection(db, "Services"));
+    }
+
+    const querySnapshot = await getDocs(q);
+    const dataFromFirebaseFetch = querySnapshot.docs.map(document => ({
+                                                                        id: document,
+                                                                    ...DocumentSnapshot.data()
+                                                                }));
+    return dataFromFirebaseFetch;
 }
+
 
 
 export default firebaseFetch;
