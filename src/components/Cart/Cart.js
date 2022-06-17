@@ -1,6 +1,9 @@
 import { useContext } from "react";
 import { useParams } from "react-router-dom";
 import { CartContext } from "../CartContext/CartContext";
+import { async } from "@firebase/util";
+import { collection, doc, setDoc, serverTimestamp } from "firebase/firestore";
+import db from "../../utils/firebaseConfig";
 
 
 const Cart = () => {
@@ -11,7 +14,38 @@ const test = useContext (CartContext);
 
 const createOrder = () => {
     alert ("has generado una orden de compra");
-    return;
+
+    const itemsForDB = test.cartList.map( item => ({
+        title: item.name,
+        idItem: item.id,
+        costItem: item.precio,
+        cantidad: item.qtyItem
+    }) )
+
+
+
+    let order = {
+        buyer: {
+            nameCustomer: "José Armando",
+            surname: "Perez Pérez",
+            email: "JoseArmando@PerezPerez.com"
+        },
+        date: serverTimestamp(),
+        total: test.calcSubTotal(),
+        item: itemsForDB
+    };
+    console.log(order);
+
+
+    const createOrderInFireStore = async () => {
+        const newOrderRef = doc(collection(db, "ordenes"));
+        await setDoc(newOrderRef, order);
+        return newOrderRef;
+    }
+
+    createOrderInFireStore()
+    .then(result => alert('El Id de tu orden es: ' + result.id))
+    .catch(err => console.log(err))
 }
 
 console.log("el contenido del carro es:  "  , test.cartList);
