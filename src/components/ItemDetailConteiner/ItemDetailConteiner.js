@@ -20,7 +20,6 @@ const mostrarUnProducto = async (itemId) => {
     const docSnap = await getDoc(docRef);
     
     if (docSnap.exists()) {
-      console.log("Document data:", docSnap.data());
       return {
         id: itemId,
         ...docSnap.data()
@@ -29,11 +28,8 @@ const mostrarUnProducto = async (itemId) => {
       // doc.data() will be undefined in this case
       console.log("No such document!");
     }
-
     return docRef;
-
 }
-
 
     useEffect(()=> {
 
@@ -44,19 +40,15 @@ const mostrarUnProducto = async (itemId) => {
         .finally(()=> setLoading(false))
        }, [id]);
 
-       console.log(detail);
-
+ 
     return (
         <>
-
-{loading ?
-
-    <div className="text-center">
-        <div className="spinner-grow text-primary" role="status">
-        <span className="visually-hidden">Loading...</span>
-        </div>
-    </div> : <ItemDetail item={detail} />}
-
+        {loading ?
+            <div className="text-center">
+                <div className="spinner-grow text-primary" role="status">
+                <span className="visually-hidden">Loading...</span>
+                </div>
+            </div> : <ItemDetail item={detail} />}
         </>
     );
 }

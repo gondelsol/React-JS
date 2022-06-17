@@ -32,9 +32,7 @@ const CartContextProvider = ({children}) => {
     }
 
     const removeItem = (id) => {
-        console.log(id);
         const result = cartList.filter(item => item.id !== id);
-        console.log("el array filtrado es: ", result);
         setCartList(result);
         }
 

@@ -10,15 +10,6 @@ const ItemListContainer = () => {
     const {id} = useParams();
     const [cargando, setCargando] = useState(false);
 
-    const joa = [{
-        name: "joaquin",
-        stock:37},
-        {
-            name: "Karina",
-            stock: 38
-        }
-];
-
 const mostrarTodosLosDatos = async () => {
     const querySnapshot = await getDocs(collection(db, "Servicios"));
     const todosLosDatos = querySnapshot.docs.map(document =>({
@@ -53,10 +44,6 @@ const filtrarDatos = async(id) => {
             .catch(err => console.log(err))
             .finally(()=> setCargando(false))
         }
-
-        console.log("ESTOS SON LOS DATOS DEL ITEMLISTCONTAINER");
-        console.log(datos);
-
     }, [id]);
 
 
