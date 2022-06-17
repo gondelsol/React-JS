@@ -18,7 +18,6 @@ const ItemList = ({items}) => {
             name={item.name}
             resumen={item.resumen}
             image={item.image} />
-
         ))}
 
       </div>

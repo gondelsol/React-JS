@@ -16,11 +16,15 @@ const ItemDetailConteiner = () => {
 
 const mostrarUnProducto = async (itemId) => {
 
-    const docRef = doc(db, "Servicios", "itemId");
+    const docRef = doc(db, "Servicios", itemId);
     const docSnap = await getDoc(docRef);
     
     if (docSnap.exists()) {
       console.log("Document data:", docSnap.data());
+      return {
+        id: itemId,
+        ...docSnap.data()
+      }
     } else {
       // doc.data() will be undefined in this case
       console.log("No such document!");
@@ -35,10 +39,12 @@ const mostrarUnProducto = async (itemId) => {
 
         setLoading(true)
         getDetail (1000, mostrarUnProducto(id))
-        .then(result => setDetail(result.find(detail => detail.id === parseInt(id))))
+        .then(result => setDetail(result))
         .catch((error) => console.log(error))
         .finally(()=> setLoading(false))
        }, [id]);
+
+       console.log(detail);
 
     return (
         <>
